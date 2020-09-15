@@ -1,18 +1,4 @@
-<!DOCTYPE HTML> 
 <html>
   <h1>Welcome to the Nested Forms Lab!</h1>
-  <h1>Display your Pirate here:</h1>
-  <% @pirates.each do |pirate| %>
-  <p> Pirate Name: <%= pirate.name %> </p>
-  <p> Pirate Weight: <%= pirate.weight %> </p>
-  <p> Pirate Height: <%= pirate.height %> </p>
-  <% end %>
 
-  <h1>Display your ship here</h1>
-  <% @ships.each do |ship| %>
-  <p> Ship Name: <%= ship.name %> </p>
-  <p> Ship Type: <%= ship.type %> </p>
-  <p> Ship Booty: <%= ship.booty %> </p>
-  <% end %>
-  <a href ="/new">Create Pirates and Their Ships!</a>
 </html>

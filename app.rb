@@ -1,19 +1,13 @@
-require './environment'
-
+require 'pry'
 module FormsLab
   class App < Sinatra::Base
-     get '/pirates' do 
-      @pirates = Pirate.all
+     
+    get '/' do
       erb :'pirates/index'
     end
     
-     get 'pirates/new' do 
+    get '/new' do 
       erb :'/pirates/new'
-    end
-    
-    get '/pirates/:id' do 
-      @pirate = Pirate.find(params["id"])
-      erb :'/pirates/show'
     end
     
     post '/pirates' do 
@@ -23,24 +17,12 @@ module FormsLab
         ship.pirate = pirate
         ship.save
         end
-    end
-   
+        redirect to "/pirates/#{pirate.id}"
+      end
     
-    
-    
-    
-    get '/' do
-      erb :'pirates/index'
-    end
-    
-    get '/new' do 
-      erb :'pirates/new'
-    end
-    
-   
-    
-    get '/pirates' do
-      erb :'pirates/show'
+    get '/pirates/:id' do 
+      @pirate = Pirate.find(params["id"])
+      erb :'/pirates/show'
     end
   end
 end
